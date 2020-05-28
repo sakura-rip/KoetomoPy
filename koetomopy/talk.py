@@ -1,5 +1,6 @@
 from .config import Config
 
+
 class Talk(object):
     def __init__(self):
         pass
@@ -17,7 +18,6 @@ class Talk(object):
         )
         if r.status_code == 200:
             print("O")
-    
 
     def call(self, target):
         param = {
