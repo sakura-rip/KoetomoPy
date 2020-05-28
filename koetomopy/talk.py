@@ -31,7 +31,7 @@ class Talk(object):
             params=param
         )
 
-    def comment_comment(self, postid, text):
+    def create_comment(self, postid, text):
         param = {
             "auth_token": self.token,
             "version": Config.APP_VERSION,
