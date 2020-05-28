@@ -54,7 +54,7 @@ class Talk(object):
             params=param
         )
 
-    def follod(self, id_):
+    def follow(self, id_):
         param = {
             "auth_token": self.token,
             "target_id": id_,
@@ -62,7 +62,7 @@ class Talk(object):
         }
         r = self.request.post(
             Config.KOETOMO_HOST + Config.FOLLOW,
-            headers=self.header,
+            headers=self.headers,
             params=param
         )
         if r.status_code == 200:
