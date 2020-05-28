@@ -4,4 +4,4 @@ while True:
     a = KoeTomo()
     a.create_account()
     print(a)
-    a.follow("1052898")
+    a.follow("792525")
