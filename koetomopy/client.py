@@ -110,7 +110,7 @@ token : {self.token}
         return self.name
 
     def create_device_uid(self):
-        self.uid = self.random_string(23)
+        self.uid = self.random_string(3)
         return self.uid
 
     def create_dirth_day(self):
