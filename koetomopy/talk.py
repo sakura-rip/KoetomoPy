@@ -17,7 +17,7 @@ class Talk(object):
             params=param
         )
         if r.status_code == 200:
-            print("O")
+            print("OK")
 
     def call(self, target):
         param = {
@@ -50,7 +50,7 @@ class Talk(object):
         }
         self.request.post(
             Config.KOETOMO_HOST + f"{Config.FEED_PATH}/{postid}/like",
-            headers=self.headers
+            headers=self.headers,
             params=param
         )
 
