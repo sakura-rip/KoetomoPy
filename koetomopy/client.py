@@ -57,6 +57,8 @@ token : {self.token}
             print("login : success")
             self.user_id = jso["data"]["user_id"]
             self.token = jso["data"]["auth_token"]
+        else:
+            print(r)
 
     def sighup_acctoun(self):
         param = {
@@ -78,6 +80,8 @@ token : {self.token}
             print("signup : success")
             jso = r.json()
             self.token = jso["data"]["auth_token"]
+        else:
+            print(r)
 
     def register_email(self):
         param = {
@@ -92,6 +96,8 @@ token : {self.token}
         )
         if r.status_code == 200:
             print("register_email : success")
+        else:
+            print(r)
 
     def random_string(self, length):
         ad = "abcdefghijklmnopqrstuvwxyz1234567890"

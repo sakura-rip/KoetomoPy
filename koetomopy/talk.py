@@ -17,7 +17,7 @@ class Talk(object):
             params=param
         )
         if r.status_code == 200:
-            print("OK")
+            print(r.json())
 
     def call(self, target):
         param = {
