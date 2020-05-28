@@ -5,8 +5,6 @@ from datetime import datetime as dt
 from .talk import  Talk
 
 
-
-
 class KoeTomo(Talk):
     def __init__(self):
         self.headers = {
@@ -57,6 +55,7 @@ token : {self.token}
         if r.status_code == 200:
             jso = r.json()
             print("login : success")
+            self.user_id = jso["data"]["user_id"]
             self.token = jso["data"]["auth_token"]
 
     def sighup_acctoun(self):
@@ -72,13 +71,12 @@ token : {self.token}
         }
         r = self.request.post(
             Config.KOETOMO_HOST + Config.SIGNIN_PATH,
-            headers = self.headers,
+            headers=self.headers,
             params=param
         )
         if r.status_code == 200:
             print("signup : success")
             jso = r.json()
-            self.user_id = jso["data"]["user_id"]
             self.token = jso["data"]["auth_token"]
 
     def register_email(self):
